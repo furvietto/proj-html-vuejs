@@ -21,8 +21,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+ @import "~bootstrap/scss/bootstrap";
 
 html {
 font-family: 'Open Sans', sans-serif;
