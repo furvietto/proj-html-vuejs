@@ -59,25 +59,72 @@
                       <div class="col-4">
                           <i class="me-1 fas fa-bars"></i>
                           <span class="me-1">CATEGORY</span>
-                          <input class="input-search p-1 w-50" placeholder="Search course" type="text">
-                          <span class="bottom-search">
+                          <!-- w-250 -->
+                          <input class="input-search p-1 w-250" placeholder="Search course" type="text">
+                          <!-- bottom-search -->
+                          <span class="bottom-search text-white">
                               <i class="fas fa-search"></i>
                           </span>
                           
                       </div>
                       <div class="col">
-                          <i class="fas fa-bullhorn"></i>
-                          <span>Became an instructor</span>
-                          <i class="fas fa-briefcase"></i>
+                          <i class="me-1 fas fa-bullhorn"></i>
+                          <span class="me-3">Became an instructor</span>
+                          <i class="me-1 fas fa-briefcase"></i>
                           <span>For Enterprise</span>
                       </div>
                       <div class="col">
-
+                          <div class="row align-items-center justify-content-between">
+                              <div class="col">
+                                  <i class="far fa-user"></i>
+                                  <span>Log In</span>
+                              </div>
+                              <div class="col-6">
+                                  <!-- sign-up -->
+                                  <button type="button" class="sign-up rounded-pill btn btn-danger">SIGN UP</button>
+                              </div>
+                              <div class="col">
+                                  <i class="fs-4 far fa-bookmark"></i>
+                              </div>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
           <!-- navbar-middle -->
+
+          <!-- navbar-bottom -->
+          <div class="col-12 text-white nav-bar-bottom">
+              <div class="container h-100">
+                  <div class="h-100 row justify-content-center">
+                      <div class="col-8">
+                          <div class="h-100 align-items-center row justify-content-between">
+                              <div class="col">
+                                  <i class="me-2 fas fa-chart-line"></i>
+                                  <span>Business</span>
+                              </div>
+                              <div class="col">
+                                  <i class="me-2 fas fa-palette"></i>
+                                  <span>Design</span>
+                              </div>
+                              <div class="col">
+                                  <i class="me-2 fas fa-cog"></i>
+                                  <span>Development</span>
+                              </div>
+                              <div class="col">
+                                  <i class=" me-2 far fa-smile"></i>
+                                  <span>Lifestyle</span>
+                              </div>
+                              <div class="col-3">
+                                  <i class="me-2 fas fa-wallet"></i>
+                                  <span>Office Productivity</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- /navbar-bottom -->
       </div>
   </div>
 </template>
@@ -90,22 +137,35 @@ export default {
 
 <style lang="scss">
 .nav-bar {
-    font-size: 0.8em;
     .nav-bar-header{
+    font-size: 0.8em;
     color: #dde6eb;
     border-bottom: 1px solid #dde6eb;
     height: 5vh;             
     }
     .nav-bar-middle {
-        height: 10vh;
+        font-size: 0.8em;
+        height: 15vh;
         color: #9b8a92;
+        .w-250{
+            width: 260px;
+        }
         .input-search{
             background-color:#dde6eb ;
         }
         .bottom-search{
             background-color: #375ca2;
             padding: 7px 16px;
+            cursor: pointer;
         }
+        .sign-up {
+          font-size: 0.9em;
+          padding: 13px 36px;
+        }
+    }
+    .nav-bar-bottom{
+        height: 10vh ;
+        background-color: #292f47;
     }
 }
 
