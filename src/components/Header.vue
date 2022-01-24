@@ -136,25 +136,27 @@ export default {
 </script>
 
 <style lang="scss">
+ @import "./../assets/scss/variables.scss";
+
 .nav-bar {
     .nav-bar-header{
     font-size: 0.8em;
-    color: #dde6eb;
-    border-bottom: 1px solid #dde6eb;
+    color: $mistic;
+    border-bottom: 1px solid $mistic;
     height: 5vh;             
     }
     .nav-bar-middle {
         font-size: 0.8em;
         height: 15vh;
-        color: #9b8a92;
+        color: $venus;
         .w-250{
             width: 260px;
         }
         .input-search{
-            background-color:#dde6eb ;
+            background-color:$mistic ;
         }
         .bottom-search{
-            background-color: #375ca2;
+            background-color: $azure;
             padding: 7px 16px;
             cursor: pointer;
         }
@@ -165,7 +167,7 @@ export default {
     }
     .nav-bar-bottom{
         height: 10vh ;
-        background-color: #292f47;
+        background-color: $ebony-clay;
     }
 }
 
