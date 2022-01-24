@@ -54,7 +54,7 @@
               <div class="container h-100">
                   <div class="h-100 align-items-center row justify-content-between">
                       <div class="col">
-                          <img src="./../assets/MasterStudy.svg" alt="">
+                          <img src="./../assets/img/MasterStudy.svg" alt="">
                       </div>
                       <div class="col-4">
                           <i class="me-1 fas fa-bars"></i>
