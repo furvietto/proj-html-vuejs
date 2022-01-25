@@ -18,6 +18,7 @@
           </div>
       </div>
   </div>
+
   <!-- popular courses -->
   <div class="pop-courses container">
       <div class="row">
@@ -208,20 +209,126 @@
     <!-- subscribe -->
 
     <!-- popular courses -->
-    <div class="container mt-5">
+    <div class="container-fluid popular-courses ">
         <div class="row">
-            <div class="col text-center">
-                <h3 class="fw-bold fs-2">Recent Courses</h3>
+            <div class="col">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h3 class="fw-bold fs-2">Recent Courses</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <div>Discover our most popular courses for self learning</div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled mt-5 mb-5 row row-cols-6">
+                        <li v-for="(card,index) in getArray" 
+                        :key="index"
+                        class="py-2 col">
+                            <div class="p-0 h-100 card">
+                                <img  :src="card.img" alt="">
+                                <div class="card-body">
+                                    <div class="development">
+                                        {{card.development}} <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <div class="description">
+                                        {{card.description}}
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-7">
+                                            <img v-for="(n,index) in 5" :key="index"
+                                            :src="(index < card.vote) ? require('./../assets/img/starfull.svg') : require('./../assets/img/staremptyl.svg')" alt="">                                         
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="sale">
+                                                <del>
+                                                    {{card.sale}}
+                                                </del>                           
+                                            </div>
+                                            <div>
+                                                <strong>
+                                                    {{card.price}}
+                                                </strong>                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                       
+                         </li>
+                    </ul>
+                    <div class="row mb-5">
+                        <div class="col text-center">
+                            <button>
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+                            <button >
+                                <i class="fas fa-angle-right"></i>
+                            </button>                          
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col text-center">
-                <div>Discover our most popular courses for self learning</div>
-            </div>
-        </div>
-        <div class="row"></div>
     </div>
     <!-- /popular courses -->
+
+    <!-- work with us -->
+    <div class="work-with-us mt-5 mb-5 container">
+        <div class="row gap-3">
+            <div class="col border">
+                <div class="p-5 row align-items-center">
+                    <div class="col-5">
+                        <img src="./../assets/img/image_box_1-221x231.png" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h3>Become an instructor</h3>
+                        <p>Teach what you love. Masterstudy gives you the tools to create a course</p>
+                        <button type="button" class="shadow-none rounded-pill btn btn-danger">START TEACHING</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col border">
+                <div class="p-5 row align-items-center">
+                    <div class="col-5">
+                        <img src="./../assets/img/image_box_2-234x231.png" alt="">
+                    </div>
+                    <div class="col-7">
+                        <h3>Access For Business</h3>
+                        <p>Get unlimited access to 2,500 of top courses for your team</p>
+                        <button type="button" class="shadow-none rounded-pill btn btn-danger">DOING BUSINESS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/work with us -->
+
+    <!-- investing -->
+    <div class="investing pb-5 pt-5 container-fluid">
+        <div class="row h-100">
+            <div class="col">
+                <div class="container pt-4 pb-4 h-100">
+                    <div class="row h-100">
+                        <div class="col-8">
+                            <div class="row h-100 justify-content-end">
+                                <div class="col-10">
+                                    <div class="row align-items-center h-100">
+                                        <div class="cartoon h-100 col-11">
+                                        </div>
+                                        <div class="triangle col-1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /investing -->
 </main>
   
 </template>
@@ -441,4 +548,61 @@ export default {
         }
 }
 
+.popular-courses{
+    background-color: $mistic;
+        .development {
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            color: $venus;
+        }
+        .description {
+            font-size: 0.8em;
+            border-bottom: 1px solid black;
+            padding-bottom: 15px;
+        }
+        .sale{
+            font-size: 0.8em;
+        }
+
+        button{
+            padding: 5px 20px;
+            font-size: 1.5em;
+            color:  $mistic;
+            border-color: $mistic;
+            &:hover{
+                background-color: $azure;
+            }
+        }
+}
+
+.work-with-us {
+    img{
+        width: 100%;
+    }
+    button{
+        font-size: 0.8em;
+        padding: 13px 36px;
+        &:hover{
+            background-color: $forest-green;
+        }
+    }
+}
+
+.investing{
+    height: 80vh;
+    background-image: url("./../assets/img/testimonial-1-1917x640-1-1914x639.jpg");
+    background-size: cover;
+    background-position: center;
+    .cartoon{
+        background-color: white;
+    }
+    .triangle{    
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid white;
+
+    }
+}
 </style>
