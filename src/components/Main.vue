@@ -21,15 +21,16 @@
   <!-- popular courses -->
   <div class="pop-courses container">
       <div class="row">
-          <div class="p-0 mb-3 col fs-5 fw-bold">
+          <div class=" mb-3 col fs-5 fw-bold">
               Popular Development Courses
           </div>
       </div>
-      <ul class="row row-cols-7 gap-3 list-unstyled">
+      <ul class="row row-cols-6 list-unstyled">
           <li v-for="(card,index) in getArray" 
           :key="index"
-          class="p-0 col card">           
-              <img  :src="card.img" alt="">
+          class="py-2 col">
+            <div class="p-0 h-100 card">
+                <img  :src="card.img" alt="">
               <div class="card-body">
                     <div class="development">
                         {{card.development}} <i class="fas fa-angle-right"></i>
@@ -57,6 +58,8 @@
                         </div>
                     </div>
               </div>
+            </div>           
+              
           </li>
       </ul>
   </div>
@@ -70,7 +73,7 @@
                     <div class="col-8">
                         <h2 class="fw-bold">Limitless learning, more possibilities</h2>
                         <p class="mt-2 mb-4">Online courses open the oppurtinity for learning to almost anyone, regardless of their scheduling commitments</p>
-                        <button type="button" class="read-more rounded-pill btn btn-danger">READ MORE</button>
+                        <button type="button" class="read-more rounded-pill btn-outline-danger">READ MORE</button>
                     </div>
                 </div>
             </div>
@@ -79,20 +82,146 @@
     <!-- /learning -->
 
     <!-- recent courses -->
-    <div class="container-fluid position-relative">
+    <div class="container-fluid mt-5 mb-5 position-relative">
         <div class="row">
             <div class="col">
                 <div class="container recent-courses">
                     <div class="row">
-                        <div class="col ciao">
-                            ciao
+                        <div class="col text-center">
+                            <h3 class="fw-bold fs-2">Recent Courses</h3>
                         </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-9">
+                            <ul class="mb-5 mt-4 align-items-center recent-courses-list list-unstyled text-center row justify-content-between">
+                                <li class="col-2 clicked">
+                                    All Categories
+                                </li>
+                                <li class="col">
+                                    Business
+                                </li>
+                                <li class="col">
+                                    Design
+                                </li>
+                                <li class="col">
+                                    Development
+                                </li>
+                                <li class="col-2">
+                                    IT &amp; software
+                                </li>
+                                <li class="col">
+                                    Lifestyle
+                                </li>
+                                <li class="col">
+                                    Marketing
+                                </li>
+                                <li class="col-2">
+                                    Office Productivity
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled mb-5 row row-cols-6">
+                        <li v-for="(card,index) in cards" 
+                        :key="index"
+                        class="py-2 col">   
+                            <div class="h-100 card">
+                                <img  :src="card.img" alt="">
+                                <div class="card-body">
+                                    <div class="development">
+                                        {{card.development}} <i class="fas fa-angle-right"></i>
+                                    </div>
+                                    <div class="description">
+                                        {{card.description}}
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col-7">
+                                            <img v-for="(n,index) in 5" :key="index"
+                                            :src="(index < card.vote) ? require('./../assets/img/starfull.svg') : require('./../assets/img/staremptyl.svg')" alt="">
+                                            
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="sale">
+                                                <del>
+                                                    {{card.sale}}
+                                                </del>                           
+                                            </div>
+                                            <div>
+                                                <strong>
+                                                    {{card.price}}
+                                                </strong>                          
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>        
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="button" class="show-all rounded-pill btn btn-outline-danger">SHOW ALL</button>
+                        </div>
+                    </div>
+                    <div class="rigth-menu flex-column row">
+                        <div class="col p-2">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="col p-2">
+                            <i class="far fa-life-ring"></i>
+                        </div>
+                        <div class="col p-2">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="col p-2">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="col d-flex justify-content-center p-2">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <!-- recent courses -->
+
+    <!-- subscribe -->
+    <div class="subscribe container-fluid">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-8">
+                <div class="row text-white">
+                    <div class="col">
+                        <h4>Suscribe our newsletter</h4>
+                        <p>There are variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            YOUR EMAIL ADDRESS
+                        </div>
+                        <input class="w-75 p-2" placeholder="Enter your E-mail" type="text">
+                        <button class="p-2">SUBSCRIBE</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- recent courses -->
+    <!-- subscribe -->
+
+    <!-- popular courses -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="fw-bold fs-2">Recent Courses</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div>Discover our most popular courses for self learning</div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+    <!-- /popular courses -->
 </main>
   
 </template>
@@ -161,6 +290,54 @@ export default {
                     price: "$95", 
                     vote: 5,
                 },
+                {
+                    img:require("./../assets/img/1561458_7f3b-272x161.jpg"),
+                    development: "design",
+                    description: "CSS The Complete Guide 2020 (incl. Flexbox, Grid & Sass)",
+                    sale: "$199.99",
+                    price: "$100", 
+                    vote: 5,
+                },
+                {
+                    img:require("./../assets/img/1776542_30b1-272x161.jpg"),
+                    development: "Google",
+                    description: "Google Searching Ninja",
+                    sale: "$69.99",
+                    price: "$45", 
+                    vote: 5,
+                },
+                {
+                    img:require("./../assets/img/1208228_d61c_4-272x161.jpg"),
+                    development: "Design",
+                    description: "Digitally Painting Ligth and Color: Amateur to Master",
+                    sale: "$139.99",
+                    price: "$75", 
+                    vote: 4,
+                },
+                {
+                    img:require("./../assets/img/186792_41e4_4-272x161.jpg"),
+                    development: "Arts & Craft",
+                    description: "Become an Arabic Calligraphy Artist From Scratch",
+                    sale: "$109.99",
+                    price: "$95", 
+                    vote: 5,
+                },
+                {
+                    img:require("./../assets/img/366802_6fcc-272x161.jpg"),
+                    development: "Food & Beverage",
+                    description: "Get Wine Smart",
+                    sale: "$49.99",
+                    price: "$25", 
+                    vote: 5,
+                },
+                {
+                    img:require("./../assets/img/838056_611a_3-272x161.jpg"),
+                    development: "Arts & Crafts",
+                    description: "Paint Realistic Watercolour and Botanicals - MAGNOLIAS",
+                    sale: "$109.99",
+                    price: "$95", 
+                    vote: 5,
+                },
             ]
         }
     },
@@ -170,6 +347,7 @@ export default {
 
 <style lang="scss">
  @import "./../assets/scss/variables.scss";
+
 .jumbotron{
     height: 40vh;
     margin: 20px 0;
@@ -183,15 +361,16 @@ export default {
         }
     }
 }
+
 .pop-courses{
     margin: 50px 0;
-    height: 50vh;
         .development {
             font-size: 0.8em;
             margin-bottom: 10px;
             color: $venus;
         }
         .description {
+            font-size: 0.8em;
             border-bottom: 1px solid black;
             padding-bottom: 15px;
         }
@@ -215,6 +394,51 @@ export default {
 }
 
 .recent-courses {
-    height: 80vh;
+  
+    .recent-courses-list{
+        color: $venus;
+        .clicked{
+            padding: 10px;
+            background-color: $mistic;
+            border-radius: 20px;
+        }
+    }
+
+    .development {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+        color: $venus;
+    }
+    .description {
+        font-size: 0.8em;
+        border-bottom: 1px solid black;
+        padding-bottom: 15px;
+    }
+    .sale{
+        font-size: 0.8em;
+    }
+
+    .show-all{
+        font-size: 0.8em;
+        padding: 13px 36px;
+    }
+
+    .rigth-menu {
+        position: absolute;
+        top: 78%;
+        right:13px;
+        box-shadow: 4px 0px 22px 5px #888888;
+    }
 }
+
+.subscribe {
+    height: 20vh;
+    background-color: $coral-red;
+    font-size: 0.9em;
+        button{
+            background-color: $azure;
+            color: white;
+        }
+}
+
 </style>

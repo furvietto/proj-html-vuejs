@@ -81,7 +81,7 @@
                               </div>
                               <div class="col-6">
                                   <!-- sign-up -->
-                                  <button type="button" class="sign-up rounded-pill btn btn-danger">SIGN UP</button>
+                                  <button type="button" class="sign-up rounded-pill btn btn-outline-danger">SIGN UP</button>
                               </div>
                               <div class="col">
                                   <i class="fs-4 far fa-bookmark"></i>
