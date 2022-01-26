@@ -98,11 +98,11 @@
                                 <li class="col-2 clicked">
                                     All Categories
                                 </li>
-                                <li class="col">
-                                    Business
+                                <li class="col">                               
+                                        Business
                                 </li>
-                                <li class="col">
-                                    Design
+                                <li class="col">                                  
+                                        Design
                                 </li>
                                 <li class="col">
                                     Development
@@ -508,10 +508,14 @@ export default {
   
     .recent-courses-list{
         color: $venus;
-        .clicked{
+        li{ 
             padding: 10px;
-            background-color: $mistic;
-            border-radius: 20px;
+            &:hover,
+            &.clicked{
+                background-color: $mistic;
+                border-radius: 20px;
+                cursor: pointer;
+            }
         }
     }
 
