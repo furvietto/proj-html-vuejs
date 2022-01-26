@@ -27,41 +27,11 @@
           </div>
       </div>
       <ul class="row row-cols-6 list-unstyled">
-          <li v-for="(card,index) in getArray" 
+          <Card 
+          v-for="(card,index) in getArray" 
           :key="index"
-          class="py-2 col">
-            <div class="p-0 h-100 card">
-                <img  :src="card.img" alt="">
-              <div class="card-body">
-                    <div class="development">
-                        {{card.development}} <i class="fas fa-angle-right"></i>
-                    </div>
-                    <div class="description">
-                        {{card.description}}
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-7">
-                            <img v-for="(n,index) in 5" :key="index"
-                            :src="(index < card.vote) ? require('./../assets/img/starfull.svg') : require('./../assets/img/staremptyl.svg')" alt="">
-                            
-                        </div>
-                        <div class="col-5">
-                            <div class="sale">
-                                <del>
-                                     {{card.sale}}
-                                </del>                           
-                            </div>
-                            <div>
-                                <strong>
-                                      {{card.price}}
-                                </strong>                          
-                            </div>
-                        </div>
-                    </div>
-              </div>
-            </div>           
-              
-          </li>
+          :card="card"
+          />
       </ul>
   </div>
   <!-- popular courses -->
@@ -123,40 +93,11 @@
                         </div>
                     </div>
                     <ul class="list-unstyled mb-5 row row-cols-6">
-                        <li v-for="(card,index) in cards" 
+                        <Card 
+                        v-for="(card,index) in cards" 
                         :key="index"
-                        class="py-2 col">   
-                            <div class="h-100 card">
-                                <img  :src="card.img" alt="">
-                                <div class="card-body">
-                                    <div class="development">
-                                        {{card.development}} <i class="fas fa-angle-right"></i>
-                                    </div>
-                                    <div class="description">
-                                        {{card.description}}
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <img v-for="(n,index) in 5" :key="index"
-                                            :src="(index < card.vote) ? require('./../assets/img/starfull.svg') : require('./../assets/img/staremptyl.svg')" alt="">
-                                            
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="sale">
-                                                <del>
-                                                    {{card.sale}}
-                                                </del>                           
-                                            </div>
-                                            <div>
-                                                <strong>
-                                                    {{card.price}}
-                                                </strong>                          
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>        
-                        </li>
+                        :card="card"
+                        />
                     </ul>
                     <div class="row">
                         <div class="col-12 text-center">
@@ -224,39 +165,11 @@
                         </div>
                     </div>
                     <ul class="list-unstyled mt-5 mb-5 row row-cols-6">
-                        <li v-for="(card,index) in getArray" 
+                        <Card 
+                        v-for="(card,index) in getArray" 
                         :key="index"
-                        class="py-2 col">
-                            <div class="p-0 h-100 card">
-                                <img  :src="card.img" alt="">
-                                <div class="card-body">
-                                    <div class="development">
-                                        {{card.development}} <i class="fas fa-angle-right"></i>
-                                    </div>
-                                    <div class="description">
-                                        {{card.description}}
-                                    </div>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <img v-for="(n,index) in 5" :key="index"
-                                            :src="(index < card.vote) ? require('./../assets/img/starfull.svg') : require('./../assets/img/staremptyl.svg')" alt="">                                         
-                                        </div>
-                                        <div class="col-5">
-                                            <div class="sale">
-                                                <del>
-                                                    {{card.sale}}
-                                                </del>                           
-                                            </div>
-                                            <div>
-                                                <strong>
-                                                    {{card.price}}
-                                                </strong>                          
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                       
-                         </li>
+                        :card="card"
+                        />
                     </ul>
                     <div class="row mb-5">
                         <div class="col text-center">
@@ -338,7 +251,12 @@
 </template>
 
 <script>
+import Card from './Card.vue'
+
 export default {
+    components:{
+        Card
+    },
     name:"Main",
     computed: {
          getArray:function () {
@@ -475,19 +393,6 @@ export default {
 
 .pop-courses{
     margin: 50px 0;
-        .development {
-            font-size: 0.8em;
-            margin-bottom: 10px;
-            color: $venus;
-        }
-        .description {
-            font-size: 0.8em;
-            border-bottom: 1px solid black;
-            padding-bottom: 15px;
-        }
-        .sale{
-            font-size: 0.8em;
-        }
 }
 
 .learning {
@@ -519,20 +424,6 @@ export default {
         }
     }
 
-    .development {
-        font-size: 0.8em;
-        margin-bottom: 10px;
-        color: $venus;
-    }
-    .description {
-        font-size: 0.8em;
-        border-bottom: 1px solid black;
-        padding-bottom: 15px;
-    }
-    .sale{
-        font-size: 0.8em;
-    }
-
     .show-all{
         font-size: 0.8em;
         padding: 13px 36px;
@@ -558,20 +449,6 @@ export default {
 
 .popular-courses{
     background-color: $mistic;
-        .development {
-            font-size: 0.8em;
-            margin-bottom: 10px;
-            color: $venus;
-        }
-        .description {
-            font-size: 0.8em;
-            border-bottom: 1px solid black;
-            padding-bottom: 15px;
-        }
-        .sale{
-            font-size: 0.8em;
-        }
-
         button{
             padding: 5px 20px;
             font-size: 1.5em;
