@@ -65,29 +65,12 @@
                     <div class="row justify-content-center">
                         <div class="col-9">
                             <ul class="mb-5 mt-4 align-items-center recent-courses-list list-unstyled text-center row justify-content-between">
-                                <li class="col-2 clicked">
-                                    All Categories
-                                </li>
-                                <li class="col">                               
-                                        Business
-                                </li>
-                                <li class="col">                                  
-                                        Design
-                                </li>
-                                <li class="col">
-                                    Development
-                                </li>
-                                <li class="col-2">
-                                    IT &amp; software
-                                </li>
-                                <li class="col">
-                                    Lifestyle
-                                </li>
-                                <li class="col">
-                                    Marketing
-                                </li>
-                                <li class="col-2">
-                                    Office Productivity
+                                <li 
+                                v-for="(categorie, index) in categories" 
+                                :key="index"
+                                @click="counter = index"
+                                :class="(counter == index) ? categorie.col+' clicked' : categorie.col ">
+                                    {{categorie.text}}
                                 </li>
                             </ul>
                         </div>
@@ -278,6 +261,41 @@ export default {
     data() {
         return {
             show:false,
+            counter:0,
+            categories:[
+                {
+                    text: "All Categories",
+                    col: "col-2",
+                },
+                {
+                    text: "Business",
+                    col: "col",
+                },
+                {
+                    text: "Design",
+                    col: "col",
+                },
+                {
+                    text: "Development",
+                    col: "col",
+                },
+                {
+                    text: "IT & Software",
+                    col: "col-2",
+                },
+                {
+                    text: "Lifestyle",
+                    col: "col",
+                },
+                {
+                    text: "Marketing",
+                    col: "col",
+                },
+                {
+                    text: "Office Productivity",
+                    col: "col-2",
+                },
+            ],
             cards:[
                 {
                     img:require("./../assets/img/895786_7b4b_2-272x161.jpg"),
