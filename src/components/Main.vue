@@ -99,6 +99,9 @@
                         :card="card"
                         />
                     </ul>
+                    <ul>
+                        
+                    </ul>
                     <div class="row">
                         <div class="col-12 text-center">
                             <button type="button" class="show-all rounded-pill btn btn-outline-danger">SHOW ALL</button>
@@ -274,7 +277,7 @@ export default {
                 {
                     img:require("./../assets/img/895786_7b4b_2-272x161.jpg"),
                     development: "development",
-                    description: "The Complete iOS 10 &amp; Swift 3 Developer Course",
+                    description: "The Complete iOS 10 & Swift 3 Developer Course",
                     sale: "$199.99",
                     price: "$100",
                     vote: 4,
@@ -298,7 +301,7 @@ export default {
                 {
                     img:require("./../assets/img/1253188_58f7_2-272x161.jpg"),
                     development: "development",
-                    description: "The Complete iOS 11 &amp; Swift Developer Course, Build 20 Apps",
+                    description: "The Complete iOS 11 & Swift Developer Course, Build 20 Apps",
                     sale: "$199.99",
                     price: "$100",
                     vote: 4  
@@ -307,7 +310,7 @@ export default {
                     img:require("./../assets/img/919872_ed54_6-272x161.jpg"),
                     development: "development",
                     description: "Android Java Masterclass - Become an App Developer",
-                    sale: "$99.99",
+                    sale: "$199.99",
                     price: "$100",
                     vote: 5, 
                 },
