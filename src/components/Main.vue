@@ -99,12 +99,16 @@
                         :card="card"
                         />
                     </ul>
-                    <ul>
-                        
+                    <ul v-if="show" class="list-unstyled row row-cols-6">
+                        <Card 
+                        v-for="(card,index) in cards" 
+                        :key="index"
+                        :card="card"
+                        />
                     </ul>
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button type="button" class="show-all rounded-pill btn btn-outline-danger">SHOW ALL</button>
+                            <button @click="show = !show" type="button" class="show-all rounded-pill btn btn-outline-danger">{{show == false ? "SHOW ALL" : "REDUCE"}}</button>
                         </div>
                     </div>
                     <div class="rigth-menu flex-column row">
@@ -273,6 +277,7 @@ export default {
 
     data() {
         return {
+            show:false,
             cards:[
                 {
                     img:require("./../assets/img/895786_7b4b_2-272x161.jpg"),
