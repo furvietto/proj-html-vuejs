@@ -1,8 +1,10 @@
 .<template>
     <li class="py-2 col">
             <div class="p-0 h-100 card">
-                <img  :src="card.img" alt="">
-              <div class="card-body">
+                <div class="scale">
+                    <img class="ciao" :src="card.img" alt="">
+                </div>
+                <div class="card-body">
                     <div class="development">
                         {{card.development}} <i class="fas fa-angle-right"></i>
                     </div>
@@ -41,17 +43,30 @@ export default {
 
 <style lang="scss">
  @import "./../assets/scss/variables.scss";
-.development {
-    font-size: 0.8em;
-    margin-bottom: 10px;
-    color: $venus;
-}
-.description {
-    font-size: 0.8em;
-    border-bottom: 1px solid black;
-    padding-bottom: 15px;
-}
-.sale{
-    font-size: 0.8em;
-}
+ li{
+     cursor: pointer;
+     .scale{
+         overflow: hidden;
+         & > img{
+             width: 100%;
+         }
+     }
+    &:hover .scale > img{
+        transition: all 1s;
+        transform: scale(1.1);
+    }
+     .development {
+         font-size: 0.8em;
+         margin-bottom: 10px;
+         color: $venus;
+     }
+     .description {
+         font-size: 0.8em;
+         border-bottom: 1px solid black;
+         padding-bottom: 15px;
+     }
+     .sale{
+         font-size: 0.8em;
+     }
+ }
 </style>
