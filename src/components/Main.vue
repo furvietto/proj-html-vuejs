@@ -245,7 +245,7 @@ import Card from './Card.vue'
 
 export default {
     components:{
-        Card
+        Card,
     },
     name:"Main",
     computed: {
