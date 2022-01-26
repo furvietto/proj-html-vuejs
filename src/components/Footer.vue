@@ -18,51 +18,18 @@
                 <div class="e-mail">info@masterstudy.com</div>
               </div>              
             </div>
+            <!-- social -->
             <div class="col">
               <h5>SOCIAL NETWORK</h5>
-              <div class="row gy-3 row-cols-4">
-                <div class="col social">
-                  <div class="facebook">
-                    <i class="fab fa-facebook"></i>     
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="instangram">
-                  <i class="fab fa-instagram"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="linkedin">
-                  <i class="fab fa-linkedin"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="pinterest">
-                  <i class="fab fa-pinterest"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="twitter">
-                  <i class="fab fa-twitter"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="dribble">
-                  <i class="fab fa-dribbble"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="google">
-                  <i class="fab fa-google-plus"></i>
-                  </div>
-                </div>
-                <div class="col social">
-                  <div class="skype">
-                  <i class="fab fa-skype"></i>
-                  </div>
-                </div>
-              </div>
+              <ul class="list-unstyled row gy-3 row-cols-4">
+                <Social 
+                v-for="(social,index) in socials"
+                :key="index"
+                :network="social"
+                />
+              </ul>
             </div>
+            <!-- /social -->
             <div class="col">
               <img class="w-100" src="./../assets/img/Top-udemy-courses-90-percent-off.jpg" alt="">
             </div>
@@ -84,8 +51,51 @@
 </template>
 
 <script>
+import Social from './Social'
+
 export default {
-    name:"Footer"
+    name:"Footer",
+    components:{
+      Social
+    },
+    data() {
+      return {
+        socials:[
+          {
+            color:"facebook",
+            icon:"fa-facebook"
+          },
+          {
+            color:"instangram",
+            icon:"fa-instagram"
+          },
+          {
+            color:"linkedin",
+            icon:"fa-linkedin"
+          },
+          {
+            color:"pinterest",
+            icon:"fa-pinterest"
+          },
+          {
+            color:"twitter",
+            icon:"fa-twitter"
+          },
+          {
+            color:"dribble",
+            icon:"fa-dribbble"
+          },
+          {
+            color:"google",
+            icon:"fa-google-plus"
+          },
+          {
+            color:"skype",
+            icon:"fa-skype"
+          },
+        ]
+      }
+    },
 }
 </script>
 
@@ -93,35 +103,7 @@ export default {
 @import "./../assets/scss/variables.scss";
 .contacts{
   background-color: $oxford-blue;
-  .social div{
-      padding: 6px 11px;
-      border-radius: 30px;
-      &.facebook{
-        background-color: $azure;
-      }
-      &.instangram{
-        background-color: #c32aa3;
-      }
-      &.linkedin{
-        background-color: $boston-blue;
-      }
-      &.pinterest{
-        background-color: $amaranth;
-      }
-      &.twitter{
-        background-color: #1da1f2;
-      }
-      &.dribble{
-        background-color: $sundown;
-      }
-      &.google{
-        background-color: $coral-red;
-      }
-      &.skype{
-        background-color: $half-baked;
-      }
-
-  }
+  
   .fs-08{
     font-size: 0.8em;
   }
