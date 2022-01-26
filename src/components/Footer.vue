@@ -1,8 +1,8 @@
 .<template>
   <footer>
     <!-- contacts -->
-    <div class="contacts pt-5 pb-5 container-fluid">
-      <div class="row justify-content-center">
+    <div class="contacts container-fluid">
+      <div class="row border-bottom pt-5 pb-5  justify-content-center">
         <div class="col-8 text-white">
           <div class="row gap-3 justify-content-between">
             <div class="col">
@@ -64,9 +64,18 @@
               </div>
             </div>
             <div class="col">
-              <img src="./../assets/img/Top-udemy-courses-90-percent-off.jpg" alt="">
+              <img class="w-100" src="./../assets/img/Top-udemy-courses-90-percent-off.jpg" alt="">
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row copyrigth text-white pt-3 pb-3 justify-content-center">
+        <div class="col-8">
+          <img class="me-3" src="./../assets/img/footer-logo2x-50x56.png" alt="">
+          <span>Copyrigth &#169; 2020</span>
+          <a class="text-white ms-2 me-2" href="">Masterstudy</a>
+          <span>Theme by</span>
+          <a class="text-white ms-2" href="">StyleMixThemes</a>
         </div>
       </div>
     </div>
@@ -84,9 +93,6 @@ export default {
 @import "./../assets/scss/variables.scss";
 .contacts{
   background-color: $oxford-blue;
-  img{
-    width: 100%;
-  }
   .social div{
       padding: 6px 11px;
       border-radius: 30px;
@@ -121,6 +127,12 @@ export default {
   }
   .e-mail{
     color: $venus;
+  }
+}
+
+.copyrigth {
+  img{
+    width: 20px;
   }
 }
 </style>

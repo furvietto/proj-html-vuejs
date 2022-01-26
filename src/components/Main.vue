@@ -316,6 +316,10 @@
                                 <div class="col-10">
                                     <div class="row align-items-center h-100">
                                         <div class="cartoon h-100 col-11">
+                                            <h3>Investing for Your Future</h3>
+                                            <p class=" mt-4 mb-4">It is no exaggeration to say this Masterstudy experience was trasformative-both professionally and personally. This workshop will long remain a high point of my life. Thanks again... I am feeling energized and eager to start teaching my class next week. I can't wait to use all of my new teaching tools. I will absolutely recommend this workshop to other educators!</p>
+                                            <div class="fw-bold">Linda Green</div>
+                                            <div class="sign">Product Manager, Apple Inc</div>
                                         </div>
                                         <div class="triangle col-1">
                                         </div>
@@ -595,6 +599,10 @@ export default {
     background-position: center;
     .cartoon{
         background-color: white;
+        padding: 80px 70px;
+        .sign{
+            font-size: 0.8em;
+        }
     }
     .triangle{    
     width: 0; 
@@ -602,7 +610,6 @@ export default {
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
     border-left: 20px solid white;
-
     }
 }
 </style>
